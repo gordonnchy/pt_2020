@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/constants/routes.dart';
 
 import 'pages/welcome.dart';
 import './pages/home.dart';
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
       routes: {
         '/': (BuildContext context) {
           return WelcomePage();},
-        '/homepage': (BuildContext context) {
+        homePage: (BuildContext context) {
           return HomePage();
         }
       },

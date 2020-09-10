@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../home.dart';
+import 'package:flutter_app/constants/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,7 +15,6 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailTextController = TextEditingController();
   final _passTextController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +60,9 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         TextFormField(
                           validator: (String value) {
-                            if(value != '') {
+                            if (value != '') {
                               return null;
-                            } 
+                            }
                             return 'This field is required';
                           },
                           // onChanged: (String value) {
@@ -85,8 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         TextFormField(
                           validator: (String value) {
-                            if (value != '')
-                              return null;
+                            if (value != '') return null;
                             return 'This field is required';
                           },
                           // onChanged: (String value) {
@@ -123,16 +120,21 @@ class _LoginPageState extends State<LoginPage> {
                                 onPressed: () {
                                   print(_formKey.currentState.validate());
                                   if (_formKey.currentState.validate()) {
-                                    if (_emailTextController.text == email && _passTextController.text == password) {
+                                    if (_emailTextController.text == email &&
+                                        _passTextController.text == password) {
                                       // _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('successful login'),));
 
                                       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
                                       //   return HomePage();
                                       // }));
 
-                                      Navigator.pushReplacementNamed(context, '/homepage');
+                                      Navigator.pushReplacementNamed(context, homePage);
                                     } else {
-                                      _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Invalid email or password'),));
+                                      _scaffoldKey.currentState
+                                          .showSnackBar(SnackBar(
+                                        content:
+                                            Text('Invalid email or password'),
+                                      ));
                                     }
                                   }
                                 },
