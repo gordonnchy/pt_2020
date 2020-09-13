@@ -29,7 +29,12 @@ class WelcomePage extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              Text("My first application", style: TextStyle(color: Colors.grey[400]),)
+              Text(
+                "My first application",
+                style: TextStyle(
+                  color: Colors.grey[400],
+                ),
+              ),
             ],
           ),
         ),

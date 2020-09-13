@@ -6,13 +6,15 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: lifeStyleCategories.length,
-        itemBuilder: (context, index) => Container(
-            margin: EdgeInsets.all(8.0),
-            height: MediaQuery.of(context).size.height / 3,
-            child: ImageTextCard(
-              category: lifeStyleCategories[index],
-            )));
+      itemCount: lifeStyleCategories.length,
+      itemBuilder: (context, index) => Container(
+        margin: EdgeInsets.all(8.0),
+        height: MediaQuery.of(context).size.height / 3,
+        child: ImageTextCard(
+          category: lifeStyleCategories[index],
+        ),
+      ),
+    );
 
     // return ImageTextCard();
   }

@@ -11,11 +11,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: WelcomePage(),
       routes: {
-        '/': (BuildContext context) {
-          return WelcomePage();},
-        homePage: (BuildContext context) {
-          return HomePage();
-        }
+        '/': (BuildContext context) => WelcomePage(),
+        homePage: (BuildContext context) => HomePage(),
       },
     );
   }

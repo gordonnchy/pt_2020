@@ -42,40 +42,45 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.calendar_today,
-              ),
-              title: Text(
-                'Today',
-              )),
+            icon: Icon(
+              Icons.calendar_today,
+            ),
+            title: Text(
+              'Today',
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.category,
-              ),
-              title: Text(
-                'Category',
-              )),
+            icon: Icon(
+              Icons.category,
+            ),
+            title: Text(
+              'Category',
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.star,
-              ),
-              title: Text(
-                'Discover',
-              )),
+            icon: Icon(
+              Icons.star,
+            ),
+            title: Text(
+              'Discover',
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-              ),
-              title: Text(
-                'Search',
-              )),
+            icon: Icon(
+              Icons.search,
+            ),
+            title: Text(
+              'Search',
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.featured_play_list,
-              ),
-              title: Text(
-                'Profile',
-              )),
+            icon: Icon(
+              Icons.featured_play_list,
+            ),
+            title: Text(
+              'Profile',
+            ),
+          ),
         ],
       ),
     );

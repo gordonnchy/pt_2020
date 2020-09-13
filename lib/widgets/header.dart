@@ -18,14 +18,22 @@ class HeaderWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w900),
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w900,
+              ),
             ),
             GestureDetector(
               onTap: () {
                 print('tapped');
               },
               child: Chip(
-                label: Text(buttonText, style: TextStyle(color: Colors.white),),
+                label: Text(
+                  buttonText,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 backgroundColor: Colors.pink,
               ),
             )

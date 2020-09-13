@@ -15,6 +15,74 @@ class _LoginPageState extends State<LoginPage> {
   final _emailTextController = TextEditingController();
   final _passTextController = TextEditingController();
 
+  Widget _buildEmailTextFormField() {
+    return TextFormField(
+      validator: (String value) {
+        if (value != '') {
+          return null;
+        }
+        return 'This field is required';
+      },
+      // onChanged: (String value) {
+      //   setState(() {
+      //     _emailValue = value;
+      //   });
+      // },
+      controller: _emailTextController,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(40.0),
+          borderSide: BorderSide(width: 8.0),
+        ),
+        hintText: 'E-Mail',
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+      ),
+      autofocus: true,
+    );
+  }
+
+  Widget _buildPasswordTextFormField() {
+    return TextFormField(
+      validator: (String value) {
+        if (value != '') return null;
+        return 'This field is required';
+      },
+      // onChanged: (String value) {
+      //   setState(() {
+      //     _passwordValue = value;
+      //   });
+      // },
+      controller: _passTextController,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(40.0),
+          borderSide: BorderSide(width: 8.0),
+        ),
+        hintText: 'Password',
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+      ),
+      autofocus: false,
+      obscureText: true,
+    );
+  }
+
+  void _submitForm() {
+    if (_formKey.currentState.validate()) {
+      if (_emailTextController.text == email &&
+          _passTextController.text == password) {
+        Navigator.pushReplacementNamed(context, '/homepage');
+      } else {
+        _scaffoldKey.currentState.showSnackBar(
+          SnackBar(
+            content: Text('Invalid email or password'),
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,56 +129,11 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.all(40.0),
                   child: Column(
                     children: [
-                      TextFormField(
-                        validator: (String value) {
-                          if (value != '') {
-                            return null;
-                          }
-                          return 'This field is required';
-                        },
-                        // onChanged: (String value) {
-                        //   setState(() {
-                        //     _emailValue = value;
-                        //   });
-                        // },
-                        controller: _emailTextController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(40.0),
-                            borderSide: BorderSide(width: 8.0),
-                          ),
-                          hintText: 'E-Mail',
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 20.0),
-                        ),
-                        autofocus: true,
-                      ),
+                      _buildEmailTextFormField(),
                       SizedBox(
                         height: 10.0,
                       ),
-                      TextFormField(
-                        validator: (String value) {
-                          if (value != '') return null;
-                          return 'This field is required';
-                        },
-                        // onChanged: (String value) {
-                        //   setState(() {
-                        //     _passwordValue = value;
-                        //   });
-                        // },
-                        controller: _passTextController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(40.0),
-                            borderSide: BorderSide(width: 8.0),
-                          ),
-                          hintText: 'Password',
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 20.0),
-                        ),
-                        autofocus: false,
-                        obscureText: true,
-                      ),
+                      _buildPasswordTextFormField(),
                       SizedBox(
                         height: 10.0,
                       ),
@@ -128,28 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40.0),
                               ),
-                              onPressed: () {
-                                print(_formKey.currentState.validate());
-                                if (_formKey.currentState.validate()) {
-                                  if (_emailTextController.text == email &&
-                                      _passTextController.text == password) {
-                                    // _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('successful login'),));
-
-                                    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                                    //   return HomePage();
-                                    // }));
-
-                                    Navigator.pushReplacementNamed(
-                                        context, '/homepage');
-                                  } else {
-                                    _scaffoldKey.currentState
-                                        .showSnackBar(SnackBar(
-                                      content:
-                                          Text('Invalid email or password'),
-                                    ));
-                                  }
-                                }
-                              },
+                              onPressed: _submitForm,
                               child: Padding(
                                 padding: const EdgeInsets.all(20.0),
                                 child: Text(
@@ -163,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               color: Colors.purple,
                             ),
-                          )
+                          ),
                         ],
                       )
                     ],
