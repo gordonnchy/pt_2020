@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/diamond.png',
+                'assets/icons/diamond.png',
                 height: 100,
                 width: 100,
               ),
