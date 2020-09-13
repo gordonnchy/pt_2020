@@ -17,16 +17,19 @@ class WelcomePage extends StatelessWidget {
                 width: 100,
               ),
               Container(
-                  padding: EdgeInsets.only(top: 50.0),
-                  child: Text(
-                    "Team Up",
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                  )),
+                padding: EdgeInsets.only(top: 50.0),
+                child: Text(
+                  "Team Up",
+                  style: TextStyle(
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 10.0,
               ),
-              Text("My first application")
+              Text("My first application", style: TextStyle(color: Colors.grey[400]),)
             ],
           ),
         ),
@@ -34,29 +37,62 @@ class WelcomePage extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           color: Colors.purple,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return LoginPage();
-                      }));
-                    },
-                    child: Text("Login".toUpperCase())),
-                InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Signup();
-                      }));
-                    },
-                    child: Text("SignUp".toUpperCase()))
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      "Login".toUpperCase(),
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Signup();
+                        },
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      "SignUp".toUpperCase(),
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

@@ -15,7 +15,6 @@ class _LoginPageState extends State<LoginPage> {
   final _emailTextController = TextEditingController();
   final _passTextController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,116 +37,139 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // Text(emailValue),
-                  Container(
-                      padding: EdgeInsets.only(top: 50.0),
-                      child: Text(
-                        "Team Up",
-                        style: TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.bold),
-                      )),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text("My first application"),
-                  Padding(
-                    padding: const EdgeInsets.all(40.0),
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          validator: (String value) {
-                            if(value != '') {
-                              return null;
-                            } 
-                            return 'This field is required';
-                          },
-                          // onChanged: (String value) {
-                          //   setState(() {
-                          //     _emailValue = value;
-                          //   });
-                          // },
-                          controller: _emailTextController,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Text(emailValue),
+                Container(
+                    padding: EdgeInsets.only(top: 50.0),
+                    child: Text(
+                      "Team Up",
+                      style: TextStyle(
+                        fontSize: 28.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                SizedBox(
+                  height: 8.0,
+                ),
+                Text(
+                  "My first application",
+                  style: TextStyle(color: Colors.grey[400]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        validator: (String value) {
+                          if (value != '') {
+                            return null;
+                          }
+                          return 'This field is required';
+                        },
+                        // onChanged: (String value) {
+                        //   setState(() {
+                        //     _emailValue = value;
+                        //   });
+                        // },
+                        controller: _emailTextController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                            borderSide: BorderSide(width: 8.0),
+                          ),
+                          hintText: 'E-Mail',
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 25.0, vertical: 20.0),
+                        ),
+                        autofocus: true,
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      TextFormField(
+                        validator: (String value) {
+                          if (value != '') return null;
+                          return 'This field is required';
+                        },
+                        // onChanged: (String value) {
+                        //   setState(() {
+                        //     _passwordValue = value;
+                        //   });
+                        // },
+                        controller: _passTextController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                            borderSide: BorderSide(width: 8.0),
+                          ),
+                          hintText: 'Password',
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 25.0, vertical: 20.0),
+                        ),
+                        autofocus: false,
+                        obscureText: true,
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "Forget Password",
+                        style: TextStyle(color: Colors.purple),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: RaisedButton(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40.0),
-                                borderSide: BorderSide(width: 8.0),
                               ),
-                              hintText: 'Enter email address'),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        TextFormField(
-                          validator: (String value) {
-                            if (value != '')
-                              return null;
-                            return 'This field is required';
-                          },
-                          // onChanged: (String value) {
-                          //   setState(() {
-                          //     _passwordValue = value;
-                          //   });
-                          // },
-                          controller: _passTextController,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  borderSide: BorderSide(width: 8.0)),
-                              hintText: 'Enter password'),
-                          autofocus: false,
-                          obscureText: true,
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "Forget Password",
-                          style: TextStyle(color: Colors.purple),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: RaisedButton(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.0),
-                                ),
-                                onPressed: () {
-                                  print(_formKey.currentState.validate());
-                                  if (_formKey.currentState.validate()) {
-                                    if (_emailTextController.text == email && _passTextController.text == password) {
-                                      // _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('successful login'),));
+                              onPressed: () {
+                                print(_formKey.currentState.validate());
+                                if (_formKey.currentState.validate()) {
+                                  if (_emailTextController.text == email &&
+                                      _passTextController.text == password) {
+                                    // _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('successful login'),));
 
-                                      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                                      //   return HomePage();
-                                      // }));
+                                    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
+                                    //   return HomePage();
+                                    // }));
 
-                                      Navigator.pushReplacementNamed(context, '/homepage');
-                                    } else {
-                                      _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Invalid email or password'),));
-                                    }
+                                    Navigator.pushReplacementNamed(
+                                        context, '/homepage');
+                                  } else {
+                                    _scaffoldKey.currentState
+                                        .showSnackBar(SnackBar(
+                                      content:
+                                          Text('Invalid email or password'),
+                                    ));
                                   }
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
-                                  child: Text('Login'),
+                                }
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                                color: Colors.purple,
                               ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                              color: Colors.purple,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
         ),
