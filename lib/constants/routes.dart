@@ -1,1 +1,1 @@
-const homePage = '/homePage';
+const homePage = '/homepage';
