@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/auth/login.dart';
-import 'package:flutter_app/pages/auth/signup.dart';
+
+import '../styles.dart';
+
+import '../pages/auth/login.dart';
+import '../pages/auth/signup.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -20,10 +23,7 @@ class WelcomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 50.0),
                 child: Text(
                   "Team Up",
-                  style: TextStyle(
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Styles.headerLarge,
                 ),
               ),
               SizedBox(
@@ -31,9 +31,7 @@ class WelcomePage extends StatelessWidget {
               ),
               Text(
                 "My first application",
-                style: TextStyle(
-                  color: Colors.grey[400],
-                ),
+                style: Styles.textDefault,
               ),
             ],
           ),
@@ -62,11 +60,7 @@ class WelcomePage extends StatelessWidget {
                     child: Text(
                       "Login".toUpperCase(),
                       textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: Styles.bottomNavBarTitle,
                     ),
                   ),
                 ),
@@ -88,11 +82,7 @@ class WelcomePage extends StatelessWidget {
                     child: Text(
                       "SignUp".toUpperCase(),
                       textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: Styles.bottomNavBarTitle,
                     ),
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../styles.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       //     _emailValue = value;
       //   });
       // },
+      style: Styles.textDefault,
       controller: _emailTextController,
       decoration: InputDecoration(
         border: OutlineInputBorder(
@@ -35,6 +37,9 @@ class _LoginPageState extends State<LoginPage> {
           borderSide: BorderSide(width: 8.0),
         ),
         hintText: 'E-Mail',
+        hintStyle: Styles.textDefault,
+        errorStyle:
+            Styles.textDefault.copyWith(color: Colors.red, fontSize: 14.0),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
       ),
@@ -53,6 +58,7 @@ class _LoginPageState extends State<LoginPage> {
       //     _passwordValue = value;
       //   });
       // },
+      style: Styles.textDefault,
       controller: _passTextController,
       decoration: InputDecoration(
         border: OutlineInputBorder(
@@ -60,6 +66,9 @@ class _LoginPageState extends State<LoginPage> {
           borderSide: BorderSide(width: 8.0),
         ),
         hintText: 'Password',
+        hintStyle: Styles.textDefault,
+        errorStyle:
+            Styles.textDefault.copyWith(color: Colors.red, fontSize: 14.0),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
       ),
@@ -110,20 +119,18 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 // Text(emailValue),
                 Container(
-                    padding: EdgeInsets.only(top: 50.0),
-                    child: Text(
-                      "Team Up",
-                      style: TextStyle(
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
+                  padding: EdgeInsets.only(top: 50.0),
+                  child: Text(
+                    "Team Up",
+                    style: Styles.headerLarge,
+                  ),
+                ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
                   "My first application",
-                  style: TextStyle(color: Colors.grey[400]),
+                  style: Styles.textDefault,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(40.0),
@@ -138,8 +145,10 @@ class _LoginPageState extends State<LoginPage> {
                         height: 10.0,
                       ),
                       Text(
-                        "Forget Password",
-                        style: TextStyle(color: Colors.purple),
+                        "Forget Password?",
+                        style: Styles.textDefault.copyWith(
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                       SizedBox(
                         height: 20.0,
@@ -156,18 +165,14 @@ class _LoginPageState extends State<LoginPage> {
                                 padding: const EdgeInsets.all(20.0),
                                 child: Text(
                                   'Login',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
+                                  style: Styles.buttonStyle,
                                 ),
                               ),
                               color: Colors.purple,
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 )

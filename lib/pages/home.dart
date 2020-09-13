@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../styles.dart';
 import './category.dart';
 import './discover.dart';
 import './profile.dart';
@@ -38,6 +39,10 @@ class _HomePageState extends State<HomePage> {
             _index = index;
           });
         },
+        selectedLabelStyle: Styles.bottomNavBarTitle,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        unselectedLabelStyle: Styles.bottomNavBarTitle,
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         items: [

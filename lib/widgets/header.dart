@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../styles.dart';
+
 class HeaderWidget extends StatelessWidget {
   final String tag;
   final String title;
@@ -12,16 +14,13 @@ class HeaderWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(tag),
+        Text(tag, style: Styles.textDefault.copyWith(fontSize: 14.0)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w900,
-              ),
+              style: Styles.headerLarge.copyWith(fontSize: 22.0, fontWeight: FontWeight.bold),
             ),
             GestureDetector(
               onTap: () {
@@ -30,9 +29,7 @@ class HeaderWidget extends StatelessWidget {
               child: Chip(
                 label: Text(
                   buttonText,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+                  style: Styles.textDefault.copyWith(fontSize: 14.0, color: Colors.white),
                 ),
                 backgroundColor: Colors.pink,
               ),

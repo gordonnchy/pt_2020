@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/album.dart';
 import '../widgets/header.dart';
+import '../widgets/cards/album_card.dart';
 
 class TodayPage extends StatelessWidget {
   @override
@@ -18,19 +20,21 @@ class TodayPage extends StatelessWidget {
             ],
           ),
         ),
-        SliverGrid.count(
-          crossAxisCount: 2,
-          children: List.generate(
-            10,
-            (index) => Card(
-              child: Center(
-                child: Text(
-                  index.toString(),
-                ),
-              ),
-            ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return AlbumCard(
+                isHot: albums[index].isHot,
+                comments: albums[index].comments,
+                cover: albums[index].cover,
+                title: albums[index].title,
+                subtitle: albums[index].subtitle,
+                details: albums[index].details,
+              );
+            },
+            childCount: albums.length,
           ),
-        ),
+        )
       ],
     );
   }
