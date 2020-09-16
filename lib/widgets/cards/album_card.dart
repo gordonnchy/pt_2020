@@ -43,8 +43,9 @@ class AlbumCard extends StatelessWidget {
             //   fit: BoxFit.fitWidth,
             // ),
             // card top
-            Align(
-              alignment: Alignment.topRight,
+            Positioned(
+              top: 0,
+              right: 0,
               child: Container(
                 padding: EdgeInsets.all(10.0),
                 child: Row(
