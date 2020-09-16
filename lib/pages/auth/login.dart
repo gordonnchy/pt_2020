@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
       ),
-      autofocus: true,
+      // autofocus: true,
     );
   }
 
@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
       ),
-      autofocus: false,
+      // autofocus: false,
       obscureText: true,
     );
   }
