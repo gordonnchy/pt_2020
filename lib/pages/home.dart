@@ -25,6 +25,39 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/img/house.png'),
+              ),
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/img/house.png'),
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/img/cup.jpeg'),
+                ),
+              ],
+              accountName: Text('John Doe'),
+              accountEmail: Text('johndoe@yahoo.com'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(0),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.scatter_plot),
+                    title: Text('state management'),
+                    onTap: () {},
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text('HomePage'),
       ),
