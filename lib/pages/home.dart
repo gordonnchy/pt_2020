@@ -51,6 +51,12 @@ class _HomePageState extends State<HomePage> {
                     leading: Icon(Icons.scatter_plot),
                     title: Text('state management'),
                     onTap: () {},
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.storage),
+                    title: Text('Storage'),
+                    onTap: () =>
+                        Navigator.pushReplacementNamed(context, '/storage'),
                   )
                 ],
               ),
