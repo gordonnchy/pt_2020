@@ -6,6 +6,7 @@ import './constants/routes.dart';
 import 'pages/welcome.dart';
 import './pages/home.dart';
 import './storage/text_file.dart';
+import './storage/shared_pref.dart';
 import './scoped_model/albums.dart';
 
 class App extends StatelessWidget {
@@ -23,7 +24,8 @@ class App extends StatelessWidget {
         routes: {
           '/': (BuildContext context) => WelcomePage(),
           homePage: (BuildContext context) => HomePage(),
-          storage: (BuildContext context) => TextFileStorage()
+          textFileStorage: (BuildContext context) => TextFileStorage(),
+          sharedPrefStorage: (BuildContext context) => SharedPrefStorage()
         },
       ),
     );

@@ -1,2 +1,3 @@
 const homePage = '/homepage';
-const storage = '/storage';
+const textFileStorage = '/textFileStorage';
+const sharedPrefStorage = '/sharedPrefStorage';

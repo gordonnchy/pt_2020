@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/routes.dart';
+
 import '../styles.dart';
 import './category.dart';
 import './discover.dart';
@@ -52,11 +54,34 @@ class _HomePageState extends State<HomePage> {
                     title: Text('state management'),
                     onTap: () {},
                   ),
-                  ListTile(
-                    leading: Icon(Icons.storage),
-                    title: Text('Storage'),
-                    onTap: () =>
-                        Navigator.pushReplacementNamed(context, '/storage'),
+                  // data storage
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        child: ListTile(
+                          title: Text('Data storage'),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.storage),
+                            title: Text('Text file storage'),
+                            onTap: () => Navigator.pushReplacementNamed(
+                                context, textFileStorage),
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.storage),
+                            title: Text('Shared Pref storage'),
+                            onTap: () => Navigator.pushReplacementNamed(
+                                context, sharedPrefStorage),
+                          )
+                        ],
+                      )
+                    ],
                   )
                 ],
               ),
