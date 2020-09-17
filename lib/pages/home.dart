@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../constants/routes.dart';
 
@@ -49,12 +50,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(0),
               child: Column(
                 children: [
-                  ListTile(
-                    leading: Icon(Icons.scatter_plot),
-                    title: Text('state management'),
-                    onTap: () {},
-                  ),
-                  // data storage
+                  // state management group
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -62,7 +58,29 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Container(
                         child: ListTile(
-                          title: Text('Data storage'),
+                          title: Text('State Management'),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.scatter_plot),
+                            title: Text('Scoped model'),
+                            onTap: () {},
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  // data storage group
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        child: ListTile(
+                          title: Text('Data Storage'),
                         ),
                       ),
                       Column(
@@ -82,10 +100,21 @@ class _HomePageState extends State<HomePage> {
                         ],
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
+            Spacer(),
+            Divider(
+              color: Colors.grey,
+              height: 0,
+            ),
+            // logout button
+            ListTile(
+              onTap: () {},
+              leading: Icon(FontAwesomeIcons.signOutAlt),
+              title: Text('Log Out'),
+            )
           ],
         ),
       ),

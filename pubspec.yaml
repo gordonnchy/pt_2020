@@ -21,7 +21,6 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  font_awesome_flutter: ^8.8.1
   flutter:
     sdk: flutter
    
@@ -33,6 +32,7 @@ dependencies:
   scoped_model: ^1.0.1
   path_provider: ^1.6.14
   shared_preferences: ^0.5.10
+  font_awesome_flutter: ^8.8.1
 
 dev_dependencies:
   flutter_test:
