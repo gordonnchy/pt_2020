@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 class Category {
   final int id;
   final String title;
@@ -65,6 +66,24 @@ List<Category> Mymessages = <Category>[
       image: 'assets/work.jpg',
       title: 'PROJECT',
       sms: 'john:Guys where are u?',
+      time:'6:30'),
+      Category(
+      id: 10,
+      image: 'assets/person13.jpg',
+      title: 'Lewis',
+      sms: 'Dude,come check these hits in the studio..they ...',
+      time:'6:24'),
+      Category(
+      id: 11,
+      image: 'assets/person10.jpg',
+      title: 'Lisa',
+      sms: 'Cool,well I would love that as well',
+      time:'6:20'),
+      Category(
+      id: 12,
+      image: 'assets/person15.jpg',
+      title: 'Tanya',
+      sms: 'I am busy but we will see how it goes',
       time:'6:30'),
        
 ];

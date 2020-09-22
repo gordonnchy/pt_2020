@@ -1,8 +1,10 @@
+import 'package:childrens_app/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'Welcomepage.dart';
 import 'Colorpage.dart';
 import 'whatsapp_page.dart';
+import 'pages/profile.dart';
 void main() {
   runApp(MyApp());
 }
@@ -20,8 +22,12 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+  //    home: MyHomePage(title: 'Flutter Demo Home Page'),
+       initialRoute: '/',
       routes: {
+        '/':(BuildContext contex){
+          return MyHomePage();
+        },
         '/welcomepage':(BuildContext contex){
           return Welcomepage();
         },
@@ -30,8 +36,13 @@ class MyApp extends StatelessWidget {
         },
        '/whatsapp_page':(BuildContext contex){
           return Whatsapp();
+        },
+         '/profile_page':(BuildContext contex){
+          return Profilepage();
         }
+
       },
+      
     );
   }
 }
@@ -54,6 +65,38 @@ class _MyHomePageState extends State<MyHomePage> {
  
     return Scaffold(
          drawer: Drawer(
+           child: ListView(
+             children:[
+               UserAccountsDrawerHeader(
+  accountName: Text("Stephen Shapa"),
+  accountEmail: Text("Stephen.shapa4@gmail.com"),
+  currentAccountPicture: CircleAvatar(
+
+    backgroundImage:AssetImage('assets/life.jpg')
+            
+              ),
+             ),
+               ListTile(
+                 title:Text('Color picker') ,
+                 onTap: (){
+                   Navigator.pushNamed(context,'/colorpage');}
+                 ),
+                 Divider(),
+                
+               ListTile(
+                 title:Text('Whatsapp') ,
+                   onTap: (){
+                   Navigator.pushNamed(context,'/whatsapp_page');}
+                 ),
+                 Divider(),
+              ListTile(
+                 title:Text('Profile page') ,
+                  onTap: (){
+                   Navigator.pushNamed(context,'/profile_page');}
+                 ),
+                 Divider(),
+             ]
+           ),
            
          ),
          appBar: AppBar(
@@ -90,7 +133,7 @@ ctetur adipiscing elit Mauris ante. ''',style:TextStyle(color:Colors.grey,fontSi
                   children: [
                     Expanded(
                               child: RaisedButton(onPressed:(){
-                                Navigator.pushNamed(context,'/whatsapp_page');
+                                Navigator.pushNamed(context,'/profile_page');
                               },
                                color: Colors.blue,
                       child: Padding(
